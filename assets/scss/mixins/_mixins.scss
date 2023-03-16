@@ -32,3 +32,10 @@
 @mixin box-shadow {
   box-shadow: -7px 4px 40px -10px darken($color-gray-dark, 40%);
 }
+
+@mixin form-style {
+  width: 420px;
+  height: $gap-x3;
+  border: 2px solid rgba($color-white, 0);
+  border-bottom-color: rgba($color-white, 0.25);
+}
