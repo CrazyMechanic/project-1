@@ -1,0 +1,60 @@
+@use "../../presets" as *;
+@use "../../mixins" as *;
+
+.footer {
+  padding: 50px 20px 70px;
+
+  text-align: center;
+
+  background-color: $color-primary;
+
+  &__container {
+    @extend %container;
+  }
+
+  &__social {
+    position: relative;
+
+    display: grid;
+    justify-content: center;
+    justify-content: center;
+
+    margin-bottom: 40px;
+
+    grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
+
+    & a {
+      display: block;
+
+      padding: 10px;
+
+      transition: color 0.5s;
+
+      &:hover,
+      &:focus {
+        color: $color-accent;
+      }
+    }
+
+    & .fab {
+      font-size: 36px;
+    }
+
+    &::after {
+      position: absolute;
+      bottom: -20px;
+      left: calc(50% - 37.5px);
+
+      width: 75px;
+      height: 2px;
+
+      content: "";
+
+      background-color: rgba($color-white, 0.1);
+    }
+  }
+}
+
+.fa-facebook-square:before {
+  content: "\f082";
+}

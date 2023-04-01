@@ -2,42 +2,90 @@
 @use "../../mixins" as *;
 
 .about {
+  position: relative;
+
   padding-top: $gap-x5;
   padding-bottom: $gap-x5;
-  position: relative;
+
   background-color: $color-gray-light;
 
-  &__container {
-    // height: 652px;
+  @include lg-md {
+    padding-top: $gap-x4;
+    padding-bottom: $gap-x4;
+  }
+  @include md {
+    padding-top: $gap-x3;
+    padding-bottom: $gap-x3;
+  }
 
-    @extend %container;
+  &__container {
     display: grid;
 
+    @extend %container;
     @include lg-min {
       gap: $gap-x5;
       grid-template-columns: 1fr 271px;
+    }
+    @include lg-md {
+      gap: $gap-x2;
+      grid-template-columns: 1fr 271px;
+    }
+    @include md-sm {
+      gap: $gap;
+      grid-template-columns: 1fr 236px;
+    }
+    @include sm {
+      gap: $gap;
+      grid-template-columns: 1fr;
     }
   }
   &__content {
     & h2 {
       margin-top: 0;
-      margin-bottom: 3rem;
+
+      @include lg-min {
+        margin-bottom: 3rem;
+      }
+      @include lg-md {
+        margin-bottom: 2.625rem;
+      }
+      @include md-sm {
+        margin-bottom: 2.25rem;
+      }
+      @include sm {
+        margin-bottom: 2.25rem;
+
+        text-align: center;
+      }
     }
     & p {
       &:first-of-type {
         position: relative;
+
         margin-top: -5px;
 
         &::after {
           position: absolute;
           top: 0;
+
           width: 2px;
           height: 200px;
+
           content: "";
+
           background-color: rgba(99, 117, 136, 0.1);
 
           @include lg-min {
             right: -50px;
+          }
+          @include lg-md {
+            right: -20px;
+          }
+          @include md-sm {
+            right: -10px;
+          }
+          @include sm {
+            display: none;
           }
         }
       }
@@ -51,6 +99,7 @@
   &__img {
     display: grid;
     align-content: center;
+
     justify-items: center;
 
     & img {

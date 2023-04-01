@@ -34,8 +34,9 @@
 }
 
 @mixin form-style {
-  width: 420px;
+  width: 100%;
   height: $gap-x3;
+
   border: 2px solid rgba($color-white, 0);
   border-bottom-color: rgba($color-white, 0.25);
 }
