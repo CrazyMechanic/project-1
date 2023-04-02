@@ -32,14 +32,14 @@
 
       transition: background-color 0.5s, border-color 0.5s;
 
-      background-color: rgba($color-white, 0.05);
       color: $color-white;
-
-      &::placeholder {
-        color: #5C7588;
-      }
+      background-color: rgba($color-white, 0.05);
 
       @include form-style;
+
+      &::placeholder {
+        color: #5c7588;
+      }
 
       &:hover,
       &:focus {
@@ -48,7 +48,7 @@
         background-color: rgba($color-white, 0.15);
 
         &::placeholder {
-          color: #8C9BAB;
+          color: #8c9bab;
         }
       }
     }
